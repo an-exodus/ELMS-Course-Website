@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="images/22.ico" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <title>ELMS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            height: 625px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url(images/head.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .nav {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        .logo img {
+            width: 100px;
+        }
+
+        .list ul {
+            display: flex;
+            gap: 35px;
+        }
+
+        .list a {
+            font-family: 'Ubuntu', sans-serif;
+            text-decoration: none;
+            color: white;
+            font-weight: 100;
+        }
+
+        .list a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        .word {
+            text-align: center;
+            margin-top: 140px;
+        }
+
+        .word h1 {
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 500;
+            font-size: 55px;
+            color: white;
+        }
+
+        .sb {
+            padding-top: 50px;
+            margin-top: 10px; /* Added margin to create a gap */
+        }
+
+        .sbsize {
+            width: 450px; /* Increased width */
+            height: 40px; /* Increased height */
+            border-radius: 20px;
+            outline: none;
+            text-align: center;
+            font-size: 18px; /* Increased font size */
+        }
+
+        .sbi {
+            position: relative;
+            top: 3px;
+            right: 30px;
+            width: 15px;
+        }
+
+        .section2 {
+            width: 100%;
+            padding: 50px 0;
+            background-color: rgb(245, 245, 245);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 500;
+            font-size: 42px;
+            color: rgb(50, 50, 50);
+        }
+
+        .line {
+            height: 30px;
+            width: 400px;
+        }
+
+        .gig {
+            margin: 25px;
+            border: 1px solid rgb(235, 235, 235);
+            display: inline-block;
+            color: rgb(54, 54, 54);
+            background-color: rgb(255, 255, 255);
+            width: 232px;
+            height: 280px;
+            border-radius: 10px;
+            box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.4s;
+        }
+
+        .gig:hover {
+            box-shadow: 2px 2px 7px -3px rgba(0, 0, 0, 0.66);
+        }
+
+        .pic {
+            background-color: rgb(250, 0, 0);
+            width: 100%;
+            height: 142px;
+            border-radius: 10px 10px 0 0;
+            overflow: hidden;
+        }
+
+        .pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h6 {
+            color: #263238;
+            margin: 0;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px;
+            padding: 10px;
+            font-weight: 400;
+        }
+
+        .gggg {
+            padding: 10px;
+        }
+
+        .gg {
+            width: 15px;
+        }
+
+        .hh {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 15px;
+            margin-left: 5px;
+        }
+
+        .piz {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .amount {
+            color: #263238;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .course {
+            color: #263238;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px;
+        }
+
+        .section3 {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .feedback {
+            width: 100%;
+            max-width: 300px;
+            margin: auto;
+        }
+
+        .feedback label {
+            font-size: 25px;
+            font-family: 'Ubuntu', sans-serif;
+            color: rgb(90, 90, 90);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .feedback input,
+        .feedback select {
+            width: 100%;
+            height: 30px;
+            border-radius: 12px;
+            outline: none;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            width: 100%;
+            padding: 20px;
+            background-color: #263238;
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #pages {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            font-size: 12px;
+        }
+
+        #sociallogo img {
+            margin: 0 5px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+
+            .list ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .word h1 {
+                font-size: 32px;
+            }
+
+            .sbsize {
+                width: 80%;
+            }
+
+            .gig {
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .line {
+                width: 200px;
+            }
+
+            .feedback label {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .word h1 {
+                font-size: 24px;
+            }
+
+            .sbsize {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .line {
+                width: 150px;
+            }
+
+            footer h5 {
+                font-size: 10px;
+            }
+
+            #pages {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar and logo -->
+    <div class="header">
+        <div class="nav">
+            <div class="logo">
+                <img src="icon/whitelogo.png" alt="">
+            </div>
+            <div class="list">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="About us.html">About us</a></li>
+                    <li><a href="Contact us.html">Contact us</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- total mid selection -->
+        <div class="word">
+            <h1>DISCOVER A NEW WAY OF LEARNING</h1>
+            <div class="sb">
+                <input class="sbsize" type="text" name="" id="" placeholder="  Search ">
+                <img class="sbi" src="icon/sbi.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- selection2 -->
+    <div class="section2">
+        <h2>OUR POPULAR COURSES</h2>
+        <center>
+            <img class="line" src="icon/line.png" alt="line">
+        </center>
+        <div class="gig">
+            <div class="pic">
+                <img style="border-radius: 10px;" src="images/11.png" alt="">
+            </div>
+            <h6>Adobe Illustrator</h6>
+            <div class="gggg">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <p class="hh" style="display: inline-block;margin-left: 5px;">(1K)</p>
+            </div>
+            <div class="piz">
+                <p class="amount">Free</p>
+                <p class="course">Course by ELMS</p>
+            </div>
+        </div>
+        <div class="gig">
+            <div class="pic">
+                <img style="border-radius: 10px;" src="images/22.png" alt="">
+            </div>
+            <h6>Animation</h6>
+            <div class="gggg">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <p class="hh" style="display: inline-block; margin-left: 5px;">(1K)</p>
+            </div>
+            <div class="piz">
+                <p class="amount">Free</p>
+                <p class="course">Course by ELMS</p>
+            </div>
+        </div>
+        <div class="gig">
+            <div class="pic">
+                <img style="border-radius: 10px;" src="images/33.png" alt="">
+            </div>
+            <h6>C/C++ Programming</h6>
+            <div class="gggg">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <p class="hh" style="display: inline-block; margin-left: 5px;">(1K)</p>
+            </div>
+            <div class="piz">
+                <p class="amount">Free</p>
+                <p class="course">Course by ELMS</p>
+            </div>
+        </div>
+        <div class="gig">
+            <div class="pic">
+                <img style="border-radius: 10px;" src="images/44.png" alt="">
+            </div>
+            <h6>CSS</h6>
+            <div class="gggg">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <img class="gg" src="icon/5.png" alt="">
+                <p class="hh" style="display: inline-block; margin-left: 5px;">(1K)</p>
+            </div>
+            <div class="piz">
+                <p class="amount">Free</p>
+                <p class="course">Course by ELMS</p>
+            </div>
+        </div>
+    </div>
+    <!-- section3 -->
+    <div class="section3">
+        <h2>WE'RE HAPPY TO HEAR FROM YOU</h2>
+        <center>
+            <img class="line" src="icon/line.png" alt="line">
+        </center>
+        <div>
+            <form class="feedback" action="feedback">
+                <label for="your name">Name</label>
+                <input id="bar" type="text" placeholder="Your Name">
+                <label for="your email">Email</label>
+                <input id="bar1" type="text" placeholder="Your email">
+                <label for="How did you find us">How did you find us</label>
+                <select name="find-us" id="find-us" onclick=validate()>
+                    <option value="other">Friends</option>
+                    <option value="other">Social Media</option>
+                    <option value="friends">News</option>
+                    <option value="other">linkedIn</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="other">Other</option>
+                </select>
+            </form>
+            <script>
+                function validate() {
+                    var name = document.getElementById("bar").value;
+                    var username = document.getElementById("bar1").value;
+                    var mailformat = /\S+@\S+\.\S+/;
+                    if (name == null || name == "") {
+                        alert("Please enter your name");
+                        return false;
+                    }
+                    if (username == null || username == "") {
+                        alert("Please enter the Email");
+                        return false;
+                    }
+                    if (!document.getElementById("bar1").value.match(mailformat)) {
+                        alert("Please enter correct the Email");
+                        return false;
+                    }
+                }
+            </script>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <a id="sociallogo" href="https://www.facebook.com/"><img src="icon/facebook.png" alt="fb" width="20px"></a>
+            <a id="sociallogo" href="https://www.twitter.com"><img src="icon/twitter.png" alt="tw" width="20px"></a>
+            <a id="sociallogo" href="https://www.instagram.com/"><img src="icon/instagram.png" alt="ig" width="20px"></a>
+        </div>
+        <h5>Copyright <img style="margin-bottom: -2px" src="icon/copyright.png" width="13px"> ELMS.LLC - 2020</h5>
+    </footer>
+</body>
+</html>
